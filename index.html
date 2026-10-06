@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>LAB. 自走タイプ診断｜あなたの働き方、今どこ？</title>
+  <meta name="description" content="7つの質問で、今の働き方の現在地と次に手放せる仕事がわかる。LAB. 自走タイプ診断。メールアドレス・個人情報の入力は不要です。">
+  <meta name="theme-color" content="#071522">
+  <link rel="icon" type="image/svg+xml" href="assets/mascot.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600&family=M+PLUS+Rounded+1c:wght@400;500;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="diagnosis.css">
+  <script src="diagnosis.js" defer></script>
+</head>
+<body>
+  <main>
+    <!-- LAB diagnosis: mascot / event banner can be replaced independently. -->
+    <section class="lab-diagnosis" id="lab-diagnosis" aria-label="LAB. 自走タイプ診断">
+      <div class="lab-diagnosis__shell">
+        <div class="lab-diagnosis__topline"><span class="lab-diagnosis__brand">LAB.</span><span class="lab-diagnosis__online">YOUR AI PARTNER</span></div>
+        <div class="lab-diagnosis__intro" data-ld-intro>
+          <div class="lab-diagnosis__heading">
+            <p class="lab-diagnosis__eyebrow">あなたの働き方、今どこ？</p>
+            <h1 class="lab-diagnosis__title" tabindex="-1"><span>LAB.</span>自走タイプ診断</h1>
+            <p class="lab-diagnosis__sub">今の働き方の現在地と、<br>次に手放せる仕事がわかる。</p>
+          </div>
+          <div class="lab-diagnosis__visual">
+            <span class="lab-diagnosis__hello">一緒に、見つけよう。</span>
+            <div class="mascot-frame mascot-frame--hero"><img class="diagnosis-mascot" src="assets/mascot.png" width="1080" height="1920" alt="白とシアンの、親しみやすいLAB.のAIパートナー"></div>
+            <span class="lab-diagnosis__orbit-label">A LITTLE STEP, MORE FREEDOM.</span>
+          </div>
+          <div class="lab-diagnosis__details"><p>7つの質問に答えるだけで、<br>あなたの仕事がどこまで<br class="mobile-break">“自走”しているかを診断します。</p><ul class="lab-diagnosis__features"><li>5段階で現在地がわかる</li><li>次の一歩が見つかる</li></ul></div>
+          <div class="lab-diagnosis__start"><button class="lab-diagnosis__button" type="button" data-ld-start disabled>診断をはじめる</button><p class="lab-diagnosis__privacy"><span>全7問</span><span>メールアドレス・個人情報の入力なし</span></p><noscript><p>診断を利用するには、JavaScriptを有効にしてください。</p></noscript></div>
+          <div class="lab-diagnosis__footer">DISCOVER YOUR NEXT STEP</div>
+        </div>
+        <div class="lab-diagnosis__question" data-ld-question hidden>
+          <aside class="lab-diagnosis__companion" aria-label="AIパートナーからのガイド">
+            <p>今のあなたに近いものを<br>選んでね。</p>
+            <div class="mascot-frame"><img class="diagnosis-mascot" src="assets/mascot.png" width="1080" height="1920" alt="LAB.のAIパートナー"></div>
+          </aside>
+          <div class="lab-diagnosis__question-body">
+          <div class="lab-diagnosis__progress-label"><span data-ld-counter>QUESTION 01 / 07</span><span data-ld-count>0 / 7 回答済み</span></div>
+          <progress class="lab-diagnosis__progress" max="7" value="0" aria-label="回答の進捗"></progress>
+          <div class="lab-diagnosis__steps" aria-hidden="true"><span data-ld-step>1</span><span data-ld-step>2</span><span data-ld-step>3</span><span data-ld-step>4</span><span data-ld-step>5</span><span data-ld-step>6</span><span data-ld-step>7</span></div>
+          <h3 id="ld-question-title" tabindex="-1"></h3><p class="lab-diagnosis__hint" id="ld-question-hint"></p>
+          <div class="lab-diagnosis__choices" role="radiogroup" aria-labelledby="ld-question-title" aria-describedby="ld-question-hint"></div>
+          <div class="lab-diagnosis__controls"><button class="lab-diagnosis__back" type="button" data-ld-back>戻る</button><button class="lab-diagnosis__button" type="button" data-ld-next disabled>次へ</button></div>
+          <p class="lab-diagnosis__note">今のあなたに一番近いものを選んでください。<br>回答は保存・送信されません。</p>
+          </div>
+        </div>
+        <div class="lab-diagnosis__result" data-ld-result hidden>
+          <p class="lab-diagnosis__eyebrow lab-diagnosis__english">DIAGNOSIS RESULT</p><p class="lab-diagnosis__result-lead">あなたの働き方の現在地がわかりました。</p>
+          <div class="lab-diagnosis__result-visual">
+            <div class="mascot-frame"><img class="diagnosis-mascot" src="assets/mascot.png" alt="あなたの結果を伝えるAIパートナー" width="1080" height="1920"></div>
+            <span class="lab-diagnosis__level">LEVEL <span data-ld-level></span> <small>/ 5</small></span>
+          </div>
+          <h3 data-ld-result-title tabindex="-1"></h3><p class="lab-diagnosis__description" data-ld-description></p>
+          <dl class="lab-diagnosis__strengths"><div><dt>今できていること</dt><dd data-ld-strength></dd></div><div><dt>次に伸ばしたいこと</dt><dd data-ld-growth></dd></div></dl>
+          <p class="lab-diagnosis__action"><strong>まず手放すなら、この仕事から。</strong><span data-ld-action></span></p>
+          <p class="lab-diagnosis__message" data-ld-message></p>
+          <a class="lab-diagnosis__button" href="#lab-next-step" data-ld-event-link>10/20のご案内を見る</a>
+          <button class="lab-diagnosis__retry" type="button" data-ld-retry>もう一度診断する</button>
+          <p class="lab-diagnosis__note">回答に基づくセルフチェックです。結果は目安としてご活用ください。</p>
+        </div>
+      </div>
+      <section class="lab-diagnosis__event" id="lab-next-step" aria-labelledby="ld-event-title" hidden>
+        <!-- Replace only src/alt with the finished announcement banner. -->
+        <div class="event-banner-frame"><img class="event-banner" src="assets/event-placeholder.svg" width="720" height="360" alt="10月20日 LAB. 次の一歩へ。詳細は近日公開"></div>
+        <div><p class="lab-diagnosis__event-label">NEXT STEP</p><h3 id="ld-event-title" tabindex="-1"><span>10/20、</span><span>次の一歩を一緒に。</span></h3><p>診断で見えたあなたの現在地から、<br>次に何を手放し、何を伸ばしていくのか。<br>10/20のご案内では、そのヒントを具体的にお届けします。</p><p class="lab-diagnosis__note">詳しい内容は、近日公開予定です。</p>
+        <!-- Seminar destination: replace href when the announcement URL is ready. -->
+        <a class="lab-diagnosis__button" href="https://lin.ee/Q2JH9I2" target="_blank" rel="noopener">10/20のご案内を見る</a><p class="lab-diagnosis__note">公式LINEが開きます。</p></div>
+      </section>
+    </section>
+  </main>
+</body>
+</html>
