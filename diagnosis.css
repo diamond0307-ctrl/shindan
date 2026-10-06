@@ -24,7 +24,7 @@ h1,h3{font-weight:800;text-shadow:0 2px 9px #7defff16}
 .lab-diagnosis__eyebrow{display:inline-flex;align-items:center;gap:9px;font-size:13px;font-weight:700;line-height:1.7;color:#7defff}
 .lab-diagnosis__heading .lab-diagnosis__eyebrow{padding:7px 15px;border:1px solid #54e7ff38;border-radius:99px;background:#54e7ff09}
 .lab-diagnosis__title{margin-top:23px;font-size:clamp(32px,4vw,48px);line-height:1.5;letter-spacing:-.045em}
-.lab-diagnosis__title>span{display:block;margin-bottom:4px;font:600 76px/1.05 "Fredoka",sans-serif;letter-spacing:-.04em}
+.lab-diagnosis__title>span{display:block;margin-bottom:4px;font:600 clamp(40px,5vw,64px)/1.15 "Fredoka",sans-serif;letter-spacing:-.04em;white-space:nowrap}
 .lab-diagnosis__sub{margin-top:21px;font-size:20px;line-height:1.9;font-weight:700}
 .lab-diagnosis__details{grid-column:1;grid-row:2;margin-top:20px}
 .lab-diagnosis__details p{font-size:14px;color:var(--ld-muted);line-height:1.95}
@@ -131,7 +131,7 @@ h1,h3{font-weight:800;text-shadow:0 2px 9px #7defff16}
  .lab-diagnosis__intro{grid-template-columns:1fr;padding:26px 20px 20px}
  .lab-diagnosis__heading{grid-row:1}.lab-diagnosis__heading .lab-diagnosis__eyebrow{font-size:11px;padding:5px 12px}
  .lab-diagnosis__title{font-size:clamp(29px,8.1vw,35px);margin-top:19px;letter-spacing:-.055em;line-height:1.5}
- .lab-diagnosis__title>span{font-size:59px;margin-bottom:4px}
+ .lab-diagnosis__title>span{font-size:clamp(38px,10vw,48px);margin-bottom:4px}
  .lab-diagnosis__sub{font-size:16px;line-height:1.9;margin-top:15px}
  .lab-diagnosis__details{grid-row:2;margin-top:14px}.lab-diagnosis__details p{font-size:12px;line-height:1.9}.mobile-break{display:block}
  .lab-diagnosis__features{font-size:10px;gap:5px 12px;margin-top:12px}
