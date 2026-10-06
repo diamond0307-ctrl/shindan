@@ -1,0 +1,168 @@
+/* LAB. — a friendly AI partner. Artwork retains its original transparent pixels. */
+*{box-sizing:border-box}
+html{background:#071522;color-scheme:dark}
+body{margin:0;background:#071522;color:#f7fbff;font-family:"M PLUS Rounded 1c",sans-serif;font-weight:500;line-height:1.8;letter-spacing:0}
+img{display:block;max-width:100%}
+button,a{-webkit-tap-highlight-color:transparent}
+button{font:inherit;cursor:pointer}
+button:disabled{cursor:default}
+[hidden]{display:none!important}
+:is(button,a):focus-visible{outline:3px solid #f7fbff;outline-offset:5px}
+:is(h1,h2,h3)[tabindex]:focus{outline:none}
+:is(h1,h2,h3,p){margin:0}
+h1,h3{font-weight:800;text-shadow:0 2px 9px #7defff16}
+.lab-diagnosis{--ld-muted:#b4cbd8;--ld-accent:#54e7ff;--ld-aura:#16d9ff18;--ld-secondary:#775cff18;position:relative;isolation:isolate;min-height:100dvh;padding:32px 24px 40px;background:radial-gradient(ellipse at 85% 15%,#16d9ff0e,transparent 47%),radial-gradient(ellipse at 8% 90%,#775cff12,transparent 45%)}
+.lab-diagnosis::before{content:"";position:absolute;inset:0;z-index:-1;pointer-events:none;background-image:radial-gradient(#7defff60 1px,transparent 1px);background-size:127px 137px;mask-image:linear-gradient(#0007,transparent 75%)}
+.lab-diagnosis__shell{position:relative;isolation:isolate;max-width:1160px;margin:auto;overflow:hidden;border:1px solid #7defff29;border-radius:36px;background:radial-gradient(ellipse at 87% 43%,var(--ld-aura),transparent 52%),radial-gradient(ellipse at 15% 100%,var(--ld-secondary),transparent 55%),#091c2a;box-shadow:0 28px 100px #020b1659,inset 0 1px 0 #ffffff0a}
+.lab-diagnosis__shell::before{content:"";position:absolute;z-index:-1;inset:70px 0 0 30%;pointer-events:none;background-image:linear-gradient(90deg,#091c2a 0%,#091c2ac9 35%,#091c2a9e 100%),url("assets/ai-bg.png");/* PNG artwork occupies y=619..1144 of its 1920px canvas. */background-size:auto,auto 366%;background-position:center,center 44.4%;background-repeat:no-repeat;opacity:.55;mask-image:linear-gradient(transparent,#000 25%,#000 65%,transparent)}
+.lab-diagnosis__topline{display:flex;align-items:center;justify-content:space-between;gap:16px;margin:0 44px;padding:22px 0;border-bottom:1px solid #7defff1c;font-family:"Fredoka",sans-serif}
+.lab-diagnosis__brand{font-size:30px;line-height:1;font-weight:600;letter-spacing:-.025em}
+.lab-diagnosis__online{display:flex;align-items:center;gap:9px;color:#bad7e4;font-size:12px;letter-spacing:.12em}
+.lab-diagnosis__online::before{content:"";height:7px;width:7px;border-radius:50%;background:#54e7ff;box-shadow:0 0 14px #54e7ff70}
+.lab-diagnosis__intro{display:grid;grid-template-columns:1.1fr 1fr;column-gap:24px;padding:48px 60px 24px;position:relative}
+.lab-diagnosis__heading{grid-column:1;grid-row:1}
+.lab-diagnosis__eyebrow{display:inline-flex;align-items:center;gap:9px;font-size:13px;font-weight:700;line-height:1.7;color:#7defff}
+.lab-diagnosis__heading .lab-diagnosis__eyebrow{padding:7px 15px;border:1px solid #54e7ff38;border-radius:99px;background:#54e7ff09}
+.lab-diagnosis__title{margin-top:23px;font-size:clamp(32px,4vw,48px);line-height:1.5;letter-spacing:-.045em}
+.lab-diagnosis__title>span{display:block;margin-bottom:4px;font:600 76px/1.05 "Fredoka",sans-serif;letter-spacing:-.04em}
+.lab-diagnosis__sub{margin-top:21px;font-size:20px;line-height:1.9;font-weight:700}
+.lab-diagnosis__details{grid-column:1;grid-row:2;margin-top:20px}
+.lab-diagnosis__details p{font-size:14px;color:var(--ld-muted);line-height:1.95}
+.mobile-break{display:none}
+.lab-diagnosis__features{display:flex;flex-wrap:wrap;gap:6px 18px;padding:0;margin:18px 0 0;list-style:none;color:#d9eef5;font-size:12px}
+.lab-diagnosis__features li::before{content:"✓";color:#54e7ff;margin-right:6px}
+.lab-diagnosis__visual{grid-column:2;grid-row:1 / 4;position:relative;align-self:center;display:grid;place-items:center;min-width:0;padding:54px 0 32px}
+.lab-diagnosis__visual::before{content:"";position:absolute;width:110%;aspect-ratio:1;border-radius:50%;background:radial-gradient(circle,#16d9ff20,transparent 65%);border:1px solid #54e7ff17;box-shadow:0 0 0 22px #54e7ff03,0 0 0 65px #54e7ff02;transform:rotate(-15deg) scaleY(.84)}
+.lab-diagnosis__visual::after{content:"";position:absolute;width:60%;height:20px;bottom:25px;border-radius:50%;background:#16d9ff25;filter:blur(16px)}
+/* Crop only transparent margins in CSS; preserve original artwork and aspect ratio. */
+.mascot-frame{position:relative;width:100%;aspect-ratio:830 / 1164;overflow:hidden;flex-shrink:0}
+.mascot-frame .diagnosis-mascot{position:absolute;max-width:none;width:130.120482%;height:auto;left:-13.012048%;top:-32.474227%}
+.mascot-frame--hero{width:min(76%,310px);animation:ld-float 4.8s ease-in-out infinite;filter:drop-shadow(0 15px 24px #16d9ff1c)}
+.lab-diagnosis__hello{position:absolute;z-index:1;left:1%;top:0;padding:12px 21px;border-radius:24px 24px 6px 24px;background:#f7fbff;color:#163b4c;font-size:14px;font-weight:700;box-shadow:0 10px 36px #020b1640;transform:rotate(-5deg)}
+.lab-diagnosis__orbit-label{position:absolute;bottom:-10px;font:400 11px/1.5 "Fredoka",sans-serif;letter-spacing:.15em;color:#9dc9d8}
+.lab-diagnosis__start{grid-column:1;grid-row:3;margin-top:29px;max-width:410px}
+.lab-diagnosis__button{position:relative;display:flex;align-items:center;justify-content:center;width:100%;min-height:62px;padding:16px 48px;border:1px solid #baf6ff99;border-radius:999px;background:linear-gradient(115deg,#7defff,#16d9ff);box-shadow:0 6px 28px #16d9ff23,inset 0 2px 0 #ffffff5c;color:#071f2c;font-size:16px;font-weight:800;line-height:1.5;text-decoration:none;text-align:center;transition:transform .2s,box-shadow .2s,background .2s}
+.lab-diagnosis__button::after{content:"→";position:absolute;right:24px;font:500 22px/1 "Fredoka",sans-serif}
+.lab-diagnosis__button:disabled{background:#163448;border-color:#7defff22;color:#a2bacb;box-shadow:none}
+.lab-diagnosis__privacy{display:flex;justify-content:center;flex-wrap:wrap;gap:0 10px;font-size:10px;color:var(--ld-muted);margin-top:14px}
+.lab-diagnosis__privacy span:first-child{color:#7defff}
+.lab-diagnosis__footer{grid-column:1 / -1;margin-top:38px;padding-top:20px;border-top:1px solid #7defff12;color:#86a8bc;font:400 10px/1.5 "Fredoka",sans-serif;letter-spacing:.18em}
+.lab-diagnosis__question{position:relative;padding:38px 60px 44px;max-width:1060px;margin:auto;min-height:600px}
+.lab-diagnosis__question-body{max-width:650px}
+.lab-diagnosis__companion{position:absolute;right:30px;top:160px;width:180px;display:flex;flex-direction:column;align-items:center;gap:24px}
+.lab-diagnosis__companion p{padding:13px 16px;border:1px solid #7defff38;border-radius:24px 24px 24px 5px;background:#0d2a3a;font-size:12px;line-height:1.9;color:#d7eff9;transform:rotate(3deg)}
+.lab-diagnosis__companion .mascot-frame{width:125px;filter:drop-shadow(0 8px 20px #16d9ff18)}
+.lab-diagnosis__progress-label{display:flex;align-items:center;justify-content:space-between;gap:8px;font:400 17px/1.5 "Fredoka",sans-serif;color:#7defff}
+.lab-diagnosis__progress-label span:last-child{font-family:"M PLUS Rounded 1c",sans-serif;font-size:11px;color:var(--ld-muted)}
+/* Keep the native accessible progress element alongside the visual seven steps. */
+.lab-diagnosis__progress{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%)}
+.lab-diagnosis__steps{position:relative;display:flex;align-items:center;justify-content:space-between;gap:12px;margin:24px 0 30px}
+.lab-diagnosis__steps::before{content:"";position:absolute;left:10px;right:10px;height:1px;background:#7defff25}
+.lab-diagnosis__steps span{z-index:1;display:grid;place-items:center;width:34px;height:34px;flex-shrink:0;border:1px solid #7defff30;border-radius:50%;background:#102b3b;color:#adc6d5;font:400 14px/1 "Fredoka",sans-serif;transition:transform .2s,box-shadow .2s}
+.lab-diagnosis__steps .is-answered{background:#54e7ff;border-color:#7defff;color:#071522;box-shadow:0 0 15px #16d9ff35}
+.lab-diagnosis__steps .is-current{transform:scale(1.16);border-color:#7defff;box-shadow:0 0 0 5px #54e7ff0d,0 0 22px #54e7ff25;color:#f7fbff;background:#174253}
+.lab-diagnosis__steps .is-current.is-answered{background:#7defff;color:#071522}
+.lab-diagnosis__question h3{font-size:26px;line-height:1.65;letter-spacing:-.025em;text-wrap:pretty}
+.lab-diagnosis__question-line{display:inline}
+.lab-diagnosis__hint{font-size:13px;line-height:1.95;color:var(--ld-muted);margin-top:13px}
+.lab-diagnosis__choices{display:grid;gap:13px;margin:28px 0}
+.lab-diagnosis__choice{position:relative;display:grid;grid-template-columns:38px 1fr 23px;align-items:center;gap:16px;min-height:82px;padding:18px 22px;border:1px solid #7defff2d;border-radius:24px;background:linear-gradient(125deg,#102e40,#0c2636);box-shadow:inset 0 1px 0 #ffffff06,0 8px 24px #020b1618;cursor:pointer;transition:transform .2s,background .2s,box-shadow .2s,border-color .2s}
+.lab-diagnosis__choice input{position:absolute;inset:0;width:100%;height:100%;margin:0;opacity:0;cursor:pointer}
+.lab-diagnosis__choice-letter{display:grid;place-items:center;width:38px;height:38px;border-radius:50%;background:#ffffff08;color:#bfe4f0;font:500 18px/1 "Fredoka",sans-serif}
+.lab-diagnosis__choice-text{font-size:15px;line-height:1.7;font-weight:700}
+.lab-diagnosis__choice-check{display:grid;place-items:center;width:22px;height:22px;border:1px solid #7da8bb;border-radius:50%;color:transparent;font-size:14px}
+.lab-diagnosis__choice:has(input:checked){transform:scale(1.01);border-color:#54e7ff;background:linear-gradient(115deg,#133c4d,#103242);box-shadow:0 0 30px #16d9ff12,inset 0 1px 0 #7defff20}
+.lab-diagnosis__choice:has(input:checked) :is(.lab-diagnosis__choice-letter,.lab-diagnosis__choice-check){background:#54e7ff;color:#071522;border-color:#54e7ff}
+.lab-diagnosis__choice:has(input:focus-visible){outline:3px solid #f7fbff;outline-offset:4px}
+.lab-diagnosis__controls{display:grid;grid-template-columns:88px 1fr;gap:22px;align-items:center}
+.lab-diagnosis__back,.lab-diagnosis__retry{min-height:56px;border:0;background:transparent;color:#c2dbe6;text-decoration:underline;text-underline-offset:6px;font-size:14px}
+.lab-diagnosis__back::before{content:"←";margin-right:8px}
+.lab-diagnosis__note{margin-top:20px;color:var(--ld-muted);font-size:11px;line-height:1.9;text-align:center}
+.lab-diagnosis__result{max-width:850px;margin:auto;padding:42px 48px;text-align:center}
+.lab-diagnosis__english{font:500 14px/1.6 "Fredoka",sans-serif;letter-spacing:.15em;color:var(--ld-accent)}
+.lab-diagnosis__result-lead{font-size:14px;margin-top:8px;color:#d3e4ee}
+.lab-diagnosis__result-visual{position:relative;width:270px;min-height:235px;margin:26px auto 21px;display:flex;align-items:center;justify-content:flex-end}
+.lab-diagnosis__result-visual::before{content:"";position:absolute;inset:-15px;border-radius:50%;background:radial-gradient(ellipse,var(--ld-aura),transparent 70%);filter:blur(6px)}
+.lab-diagnosis__result-visual .mascot-frame{width:156px;transform:rotate(4deg)}
+.lab-diagnosis__level{position:absolute;left:0;bottom:20px;display:flex;align-items:center;gap:9px;padding:14px 22px;border:1px solid #f7fbff66;border-radius:999px;background:linear-gradient(120deg,#7defff,#16d9ff);box-shadow:0 10px 38px var(--ld-aura),inset 0 2px 0 #ffffff55;color:#071f2c;font:500 20px/1 "Fredoka",sans-serif;transform:rotate(-5deg)}
+.lab-diagnosis__level [data-ld-level]{font-size:42px}
+.lab-diagnosis__level small{font-size:17px;color:#21495e}
+.lab-diagnosis__result h3{font-size:30px;line-height:1.7;letter-spacing:-.03em;text-wrap:balance}
+.lab-diagnosis__description{margin-top:20px;color:#cee1ed;font-size:15px;line-height:2;white-space:pre-line;text-align:left}
+.lab-diagnosis__strengths{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin:30px 0}
+.lab-diagnosis__strengths>div{text-align:left;padding:24px;border:1px solid #7defff36;border-radius:28px;background:linear-gradient(130deg,#133246,#0d2536);box-shadow:0 12px 40px #020b1629,inset 0 1px 0 #ffffff07}
+.lab-diagnosis__strengths>div:last-child{border-color:#b765ff40;background:linear-gradient(130deg,#252942,#0d2536)}
+.lab-diagnosis__strengths dt{font-size:12px;color:#d4e5f1}
+.lab-diagnosis__strengths dt::before{content:"✓";display:inline-grid;place-items:center;width:25px;height:25px;margin-right:8px;border-radius:50%;background:#54e7ff16;color:#7defff}
+.lab-diagnosis__strengths>div:last-child dt::before{content:"↗";background:#b765ff18;color:#d9b2ff}
+.lab-diagnosis__strengths dd{margin:13px 0 0;font-size:23px;font-weight:800;line-height:1.6;color:#7defff}
+.lab-diagnosis__strengths>div:last-child dd{color:#dac8ff}
+.lab-diagnosis__action{text-align:left;padding:8px 0 8px 20px;border-left:3px solid var(--ld-accent);font-size:14px;line-height:1.95;color:#d0e3ef}
+.lab-diagnosis__action strong{display:block;font-size:13px;color:var(--ld-accent);margin-bottom:8px}
+.lab-diagnosis__message{font-size:16px;font-weight:700;line-height:1.9;margin:30px 0 24px;text-wrap:balance}
+.lab-diagnosis__result>.lab-diagnosis__button{max-width:460px;margin:auto}
+.lab-diagnosis__retry{display:block;margin:15px auto 0}
+.lab-diagnosis[data-level="1"]{--ld-accent:#87c9ff;--ld-aura:#3590e525;--ld-secondary:#1b52821c}
+.lab-diagnosis[data-level="2"]{--ld-accent:#54e7ff;--ld-aura:#16d9ff2b}
+.lab-diagnosis[data-level="3"]{--ld-accent:#7defff;--ld-aura:#16d9ff28;--ld-secondary:#b765ff2b}
+.lab-diagnosis[data-level="4"]{--ld-accent:#d0b6ff;--ld-aura:#775cff35;--ld-secondary:#357aff28}
+.lab-diagnosis[data-level="5"]{--ld-accent:#dcfbff;--ld-aura:#7defff38;--ld-secondary:#f7fbff13}
+.lab-diagnosis__event{display:grid;grid-template-columns:1fr 1fr;align-items:center;gap:42px;max-width:1160px;margin:28px auto 0;padding:44px;border:1px solid #7defff36;border-radius:36px;background:radial-gradient(ellipse at 0 100%,#16d9ff12,transparent 65%),#0d2536;box-shadow:0 24px 80px #020b1640}
+.event-banner-frame{border-radius:24px;overflow:hidden;aspect-ratio:2 / 1;background:#122e40;box-shadow:0 14px 40px #020b1640;border:1px solid #7defff30}
+.event-banner{width:100%;height:100%;object-fit:contain}
+.lab-diagnosis__event-label{font:500 14px/1.5 "Fredoka",sans-serif;letter-spacing:.15em;color:#7defff}
+.lab-diagnosis__event h3{font-size:29px;line-height:1.7;letter-spacing:-.04em;margin:12px 0 16px}
+.lab-diagnosis__event h3 span{display:block}
+.lab-diagnosis__event p:not([class]){font-size:14px;line-height:2;color:#c7dce8}
+.lab-diagnosis__event .lab-diagnosis__button{margin-top:24px}
+.lab-diagnosis__event .lab-diagnosis__note{margin-top:12px;text-align:left}
+.lab-diagnosis__event a+.lab-diagnosis__note{text-align:center}
+.lab-diagnosis__question,.lab-diagnosis__result{animation:ld-appear .35s ease-out}
+@keyframes ld-appear{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
+@keyframes ld-float{0%,100%{transform:translateY(0)}50%{transform:translateY(-12px)}}
+@media(hover:hover){.lab-diagnosis__button:not(:disabled):hover{transform:translateY(-3px);box-shadow:0 10px 35px #16d9ff35}.lab-diagnosis__choice:hover{transform:translateY(-3px);border-color:#54e7ff90;box-shadow:0 12px 32px #020b1633}.lab-diagnosis__choice:has(input:checked):hover{transform:translateY(-2px) scale(1.01)}}
+@media(max-width:1050px){.lab-diagnosis__intro{padding:36px 36px 24px;gap:0 20px}.lab-diagnosis__title{font-size:36px}.lab-diagnosis__sub{font-size:17px}.lab-diagnosis__question{padding:32px 40px}.lab-diagnosis__question-body{max-width:560px;margin:auto}.lab-diagnosis__companion{position:relative;right:auto;top:auto;width:100%;max-width:560px;flex-direction:row;justify-content:flex-end;gap:16px;margin:0 auto 24px}.lab-diagnosis__companion .mascot-frame{width:50px}.lab-diagnosis__companion p{font-size:11px;padding:8px 16px;transform:none}.lab-diagnosis__event{padding:30px;gap:28px}.lab-diagnosis__event h3{font-size:24px}}
+@media(max-width:700px){
+ .lab-diagnosis{padding:16px 16px 28px}
+ .lab-diagnosis__shell{border-radius:28px}
+ .lab-diagnosis__shell::before{inset:100px -50% 0 0;opacity:.45}
+ .lab-diagnosis__topline{margin:0 20px;padding:20px 0}
+ .lab-diagnosis__brand{font-size:26px}.lab-diagnosis__online{font-size:10px;letter-spacing:.075em}
+ .lab-diagnosis__intro{grid-template-columns:1fr;padding:26px 20px 20px}
+ .lab-diagnosis__heading{grid-row:1}.lab-diagnosis__heading .lab-diagnosis__eyebrow{font-size:11px;padding:5px 12px}
+ .lab-diagnosis__title{font-size:clamp(29px,8.1vw,35px);margin-top:19px;letter-spacing:-.055em;line-height:1.5}
+ .lab-diagnosis__title>span{font-size:59px;margin-bottom:4px}
+ .lab-diagnosis__sub{font-size:16px;line-height:1.9;margin-top:15px}
+ .lab-diagnosis__details{grid-row:2;margin-top:14px}.lab-diagnosis__details p{font-size:12px;line-height:1.9}.mobile-break{display:block}
+ .lab-diagnosis__features{font-size:10px;gap:5px 12px;margin-top:12px}
+ .lab-diagnosis__visual{grid-column:1;grid-row:3;width:100%;height:236px;margin:15px 0 4px;padding:10px 0 14px}
+ .lab-diagnosis__visual::before{width:84%;height:210px;aspect-ratio:auto;left:8%;box-shadow:0 0 0 14px #54e7ff03}
+ .mascot-frame--hero{width:143px;margin-left:48px}
+ .lab-diagnosis__hello{left:0;top:20px;font-size:10px;padding:8px 11px;transform:rotate(-7deg)}
+ .lab-diagnosis__visual::after{bottom:10px;width:45%;left:35%}.lab-diagnosis__orbit-label{bottom:0;font-size:8px;letter-spacing:.11em}
+ .lab-diagnosis__start{grid-row:4;margin-top:16px;max-width:none}
+ .lab-diagnosis__button{min-height:58px;font-size:14px;padding:17px 38px}.lab-diagnosis__button::after{right:18px;font-size:19px}
+ .lab-diagnosis__privacy{font-size:9px;gap:0 7px;margin-top:12px}
+ .lab-diagnosis__footer{grid-row:5;margin-top:23px;padding-top:16px;font-size:8px}
+ .lab-diagnosis__question{padding:20px 18px 26px;min-height:0}
+ .lab-diagnosis__companion{gap:12px;margin-bottom:21px}.lab-diagnosis__companion p{font-size:10px;line-height:1.7}.lab-diagnosis__companion .mascot-frame{width:45px}
+ .lab-diagnosis__progress-label{font-size:15px}.lab-diagnosis__progress-label span:last-child{font-size:10px}
+ .lab-diagnosis__steps{gap:7px;margin:21px 0 25px}.lab-diagnosis__steps span{width:29px;height:29px;font-size:12px}
+ .lab-diagnosis__question h3{font-size:clamp(17px,4.55vw,20px);line-height:1.85;letter-spacing:-.025em}.lab-diagnosis__question-line{display:block}
+ .lab-diagnosis__hint{font-size:12px;line-height:1.9;margin-top:12px}
+ .lab-diagnosis__choices{gap:12px;margin:23px 0}.lab-diagnosis__choice{grid-template-columns:30px 1fr 19px;gap:10px;padding:18px 14px;border-radius:22px;min-height:78px}
+ .lab-diagnosis__choice-letter{width:30px;height:30px;font-size:16px}.lab-diagnosis__choice-check{width:19px;height:19px;font-size:12px}.lab-diagnosis__choice-text{font-size:13px;line-height:1.8}
+ .lab-diagnosis__controls{grid-template-columns:58px 1fr;gap:14px}.lab-diagnosis__back{font-size:12px}.lab-diagnosis__controls .lab-diagnosis__button{padding-inline:30px;font-size:13px}.lab-diagnosis__controls .lab-diagnosis__button::after{right:13px}
+ .lab-diagnosis__note{font-size:10px;margin-top:18px}
+ .lab-diagnosis__result{padding:28px 20px}.lab-diagnosis__english{font-size:12px}.lab-diagnosis__result-lead{font-size:11px}
+ .lab-diagnosis__result-visual{margin:20px auto;width:235px;min-height:208px}.lab-diagnosis__result-visual .mascot-frame{width:140px}.lab-diagnosis__level{padding:12px 19px;font-size:16px}.lab-diagnosis__level [data-ld-level]{font-size:36px}.lab-diagnosis__level small{font-size:15px}
+ .lab-diagnosis__result h3{font-size:23px;line-height:1.7}.lab-diagnosis__description{font-size:13px;line-height:2;margin-top:18px}
+ .lab-diagnosis__strengths{grid-template-columns:1fr;gap:14px;margin:24px 0}.lab-diagnosis__strengths>div{padding:20px;border-radius:24px}.lab-diagnosis__strengths dt{font-size:11px}.lab-diagnosis__strengths dd{font-size:21px;margin-top:10px}
+ .lab-diagnosis__action{padding-left:15px;font-size:12px}.lab-diagnosis__action strong{font-size:12px}.lab-diagnosis__message{font-size:14px;margin:24px 0 20px}
+ .lab-diagnosis__event{grid-template-columns:1fr;margin-top:20px;padding:24px 20px;gap:27px;border-radius:28px}.event-banner-frame{border-radius:24px}.lab-diagnosis__event h3{font-size:25px}.lab-diagnosis__event p:not([class]){font-size:12px;line-height:2}.lab-diagnosis__event p:not([class]) br{display:none}.lab-diagnosis__event-label{font-size:12px}
+}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
+
+.lab-diagnosis__phrase{display:inline-block;white-space:nowrap}
+.lab-diagnosis__note{text-wrap:pretty}
+@media(min-width:701px) and (max-width:1050px){.mobile-break{display:block}}
