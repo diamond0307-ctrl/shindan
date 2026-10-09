@@ -166,3 +166,7 @@ h1,h3{font-weight:800;text-shadow:0 2px 9px #7defff16}
 .lab-diagnosis__phrase{display:inline-block;white-space:nowrap}
 .lab-diagnosis__note{text-wrap:pretty}
 @media(min-width:701px) and (max-width:1050px){.mobile-break{display:block}}
+
+/* Hide the outdated date at y < 470px without changing the original artwork. */
+.event-banner-frame--course{position:relative;aspect-ratio:1080 / 620;background:#fff}
+.event-banner-frame--course .event-banner{position:absolute;top:-75.806452%;left:0;width:100%;height:auto;max-width:none}
