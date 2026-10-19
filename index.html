@@ -10,8 +10,8 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600&family=M+PLUS+Rounded+1c:wght@400;500;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="diagnosis.css?v=20261019-2">
-  <script src="diagnosis.js?v=20261019-2" defer></script>
+  <link rel="stylesheet" href="diagnosis.css?v=20261019-3">
+  <script src="diagnosis.js?v=20261019-3" defer></script>
 </head>
 <body>
   <main>
@@ -19,20 +19,12 @@
     <section class="lab-diagnosis" id="lab-diagnosis" aria-label="AI仕事手放し診断">
       <div class="lab-diagnosis__shell">
         <div class="lab-diagnosis__topline"><span class="lab-diagnosis__brand">LAB.</span><span class="lab-diagnosis__online">YOUR AI PARTNER</span></div>
-        <div class="lab-diagnosis__intro" data-ld-intro>
-          <div class="lab-diagnosis__heading">
-            <p class="lab-diagnosis__eyebrow">あなたの仕事、どこまでAIに任せられる？</p>
-            <h1 class="lab-diagnosis__title" tabindex="-1"><span>NOMAD×AI</span>AI仕事手放し診断</h1>
-            <p class="lab-diagnosis__sub">AIに任せられる仕事と、<br>次に手放せる仕事がわかる。</p>
-          </div>
-          <div class="lab-diagnosis__visual">
-            <span class="lab-diagnosis__hello">一緒に、見つけよう。</span>
-            <div class="mascot-frame mascot-frame--hero"><img class="diagnosis-mascot" src="assets/mascot.png" width="1080" height="1920" alt="白とシアンの、親しみやすいLAB.のAIパートナー"></div>
-            <span class="lab-diagnosis__orbit-label">A LITTLE STEP, MORE FREEDOM.</span>
-          </div>
-          <div class="lab-diagnosis__details"><p>7つの質問に答えるだけで、<br>今の働き方と、AIに任せる<br class="mobile-break">次の一歩を診断します。</p><ul class="lab-diagnosis__features"><li>5段階で現在地がわかる</li><li>次の一歩が見つかる</li></ul></div>
-          <div class="lab-diagnosis__start"><button class="lab-diagnosis__button" type="button" data-ld-start disabled>診断をはじめる</button><p class="lab-diagnosis__privacy"><span>全7問</span><span>メールアドレス・個人情報の入力なし</span></p><noscript><p>診断を利用するには、JavaScriptを有効にしてください。</p></noscript></div>
-          <div class="lab-diagnosis__footer">DISCOVER YOUR NEXT STEP</div>
+        <div class="lab-diagnosis__intro lab-diagnosis__intro--banner" data-ld-intro>
+          <h1 class="lab-diagnosis__title diagnosis-visually-hidden" tabindex="-1">AI仕事手放し診断</h1>
+          <button class="diagnosis-hero-banner" type="button" data-ld-start disabled aria-label="AI仕事手放し診断をはじめる">
+            <img src="assets/ai-work-release-banner.png?v=20261019-3" width="1254" height="1254" alt="あなたの仕事、どこまでAIに任せられる？ AI仕事手放し診断。今の働き方を7問でチェック。AIに任せられる仕事と、あなたが次に手放せる仕事がわかります。診断をはじめる。個人情報の入力なし。">
+          </button>
+          <noscript><p>診断を利用するには、JavaScriptを有効にしてください。</p></noscript>
         </div>
         <div class="lab-diagnosis__question" data-ld-question hidden>
           <aside class="lab-diagnosis__companion" aria-label="AIパートナーからのガイド">
@@ -65,7 +57,7 @@
         </div>
       </div>
       <section class="lab-diagnosis__event" id="lab-next-step" aria-labelledby="ld-event-title" hidden>
-        <button type="button" class="event-banner-frame event-banner-frame--diagnosis" data-ld-banner-retry aria-label="AI仕事手放し診断をもう一度はじめる"><img class="event-banner" src="assets/ai-work-release-banner.png?v=20261019-2" width="1254" height="1254" alt="あなたの仕事、どこまでAIに任せられる？ AI仕事手放し診断。全7問、個人情報の入力なし。診断をはじめる。"></button>
+        <button type="button" class="event-banner-frame event-banner-frame--diagnosis" data-ld-banner-retry aria-label="AI仕事手放し診断をもう一度はじめる"><img class="event-banner" src="assets/ai-work-release-banner.png?v=20261019-3" width="1254" height="1254" alt="あなたの仕事、どこまでAIに任せられる？ AI仕事手放し診断。全7問、個人情報の入力なし。診断をはじめる。"></button>
         <div><p class="lab-diagnosis__event-label">NEXT STEP</p><h3 id="ld-event-title" tabindex="-1"><span>見つけた仕事を、<br>AIに任せる一歩へ。</span></h3><p>結果に出た仕事をひとつ選び、まずは下書きや整理からAIに任せてみましょう。<br>具体的な使い方を知りたい方は、講座のご案内へ。<br>画像のボタンから、もう一度診断することもできます。</p>
         <!-- Course information page. -->
         <a class="lab-diagnosis__button" href="https://diamond0307-ctrl.github.io/AI_creator/" target="_blank" rel="noopener">講座のご案内を見る</a><p class="lab-diagnosis__note">講座の詳細ページが開きます。</p></div>
