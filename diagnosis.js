@@ -6,9 +6,9 @@
   const find = (selector) => root.querySelector(selector);
   const questions = [
     ['あなたが1日仕事をしなかったら、仕事は進みますか？', '自分が止まったとき、仕事の流れがどこまで動くかを見ます。', ['ほぼ止まる', '一部は進む', 'ある程度は進む']],
-    ['SNSや集客の発信は、毎回ゼロから考えていますか？', '発信が“その場しのぎ”なのか、“型”になっているのかを見ます。', ['毎回その場で考えている', 'ある程度パターンはある', '流れや型が決まっている']],
+    ['SNSや集客の発信は、毎回ゼロから考えていますか？', '発信が“その場しのぎ”なのか、“型”になっているのかを見ます。', ['毎回その場で考えている', 'ある程度パターンはある', 'AIへの指示や発信の型がある']],
     ['今の仕事は、自分が手を動かし続けなくても進む部分がありますか？', 'AI・仕組み・導線などに、どこまで任せられているかを見ます。', ['ほとんどない', '一部ある', '複数ある']],
-    ['文章・画像・資料づくりには、どのくらい時間がかかりますか？', '制作作業に、時間を取られすぎていないかを見ます。', ['かなり時間がかかる', '少し時短できている', 'かなり効率化できている']],
+    ['文章・画像・資料づくりには、どのくらい時間がかかりますか？', '下書きや構成づくりを、AIにどこまで任せられているかを見ます。', ['ほぼすべて自分でつくっている', 'AIで一部を時短している', 'AIの下書きを確認・修正している']],
     ['『自分にしかできない仕事』を分けて考えられていますか？', '全部を自分で抱えていないかを見ます。', ['ほとんど分けられていない', 'なんとなく分かっている', 'かなり整理できている']],
     ['あなたが直接説明しなくても、サービス内容はある程度伝わる状態ですか？', '発信・LP・資料などが、どこまであなたの代わりになっているかを見ます。', ['ほとんど伝わっていない', '一部は伝わる', 'かなり伝わる']],
     ['仕事の予定より、自分の予定を先に決められていますか？', '仕事に人生を合わせるのではなく、人生に仕事を合わせられているかを見ます。', ['仕事に合わせて生活を決めることが多い', 'ある程度は調整できる', '自分の予定を先に決められる']]
@@ -29,6 +29,16 @@
     { max: 15, title: '型をつくり始める設計期', description: '発信や仕事の流れにパターンが生まれ、\n少しずつ“自走の土台”ができてきている段階です。', strength: '整える力', growth: '仕組みにする力', message: 'ここからは、“頑張る”より“回る”へ変えていく段階です。', action: '問い合わせに毎回答える仕事を、よくある質問のページへ。説明の繰り返しを減らしてみましょう。' },
     { max: 18, title: '回る仕組みを育てる成長期', description: 'すでに一部の仕事は自分が動かなくても進み始めています。\nここから先は、精度と再現性を高めるフェーズです。', strength: '仕組み化する力', growth: '安定させる力', message: '次は、“回る”を“育つ”へ変えていこう。', action: '毎回の進み具合の確認を、週に一度のチェックへ。見る項目を決めて、仕組みを整えましょう。' },
     { max: 21, title: '人生から仕事を設計できる自走期', description: '仕事に人生を合わせるのではなく、\n人生に合わせて仕事を設計できている状態です。', strength: '自走させる力', growth: '広げる力', message: 'ここからは、あなた自身だけでなく、人や仕組みを育てる段階へ。', action: '自分だけが知っている運用手順を、共有できる形へ。人に引き継げる仕事をひとつ増やしましょう。' }
+  ];
+  // Tie the next task to the answer with the most room to delegate.
+  const delegationTasks = [
+    '日々の作業リストをAIに整理してもらい、繰り返す仕事をひとつ選びましょう。任せる範囲は自分で決めます。',
+    'SNS投稿のネタ出しと下書きをAIに任せてみましょう。事実や自分らしい言葉を確認してから公開します。',
+    '毎回作るメールや案内文の下書きをAIに任せてみましょう。宛先や内容は自分で確認してから送ります。',
+    '資料の構成案や文章のたたき台をAIに任せてみましょう。数字・出典・画像の利用条件は自分で確認します。',
+    '作業を「自分が判断すること」と「下書き・整理」に分けるところから。AIに相談し、最後は自分で決めます。',
+    'よくある質問とサービス説明の下書きをAIに整理してもらいましょう。料金や条件を確認して掲載します。',
+    '一週間の作業をAIに整理してもらい、定型作業と予定のたたき台をつくりましょう。優先順位は自分で決めます。'
   ];
   let answers = Array(questions.length).fill(null);
   let current = 0;
@@ -104,6 +114,8 @@
       return span;
     }));
     for (const key of ['description', 'strength', 'growth', 'message', 'action']) find(`[data-ld-${key}]`).textContent = data[key];
+    const firstTask = answers.indexOf(Math.min(...answers));
+    find('[data-ld-action]').textContent = delegationTasks[firstTask];
     // Wrap at phrase boundaries without changing the result copy.
     find('[data-ld-message]').replaceChildren(...data.message.split(/(?<=、)|(?<=”から)|(?<=”より)|(?<=”を)|(?<=”へ)/u).map((text) => {
       const span = document.createElement('span');
@@ -114,7 +126,9 @@
     question.hidden = true; result.hidden = false; event.hidden = false;
     focusAndReveal(find('[data-ld-result-title]'), result);
   });
-  find('[data-ld-retry]').addEventListener('click', () => { answers = Array(questions.length).fill(null); current = 0; renderQuestion(); });
+  function restart() { answers = Array(questions.length).fill(null); current = 0; renderQuestion(); }
+  find('[data-ld-retry]').addEventListener('click', restart);
+  find('[data-ld-banner-retry]').addEventListener('click', restart);
   find('[data-ld-event-link]').addEventListener('click', (e) => {
     e.preventDefault(); focusAndReveal(find('#ld-event-title'), event);
   });

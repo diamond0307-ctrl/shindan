@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-  <title>LAB. 自走タイプ診断｜あなたの働き方、今どこ？</title>
-  <meta name="description" content="7つの質問で、今の働き方の現在地と次に手放せる仕事がわかる。LAB. 自走タイプ診断。メールアドレス・個人情報の入力は不要です。">
+  <title>AI仕事手放し診断｜あなたの仕事、どこまでAIに任せられる？</title>
+  <meta name="description" content="7つの質問で、今の働き方の現在地と次に手放せる仕事がわかる。AI仕事手放し診断。メールアドレス・個人情報の入力は不要です。">
   <meta name="theme-color" content="#071522">
   <link rel="icon" type="image/svg+xml" href="assets/mascot.svg">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -16,21 +16,21 @@
 <body>
   <main>
     <!-- LAB diagnosis: mascot / event banner can be replaced independently. -->
-    <section class="lab-diagnosis" id="lab-diagnosis" aria-label="LAB. 自走タイプ診断">
+    <section class="lab-diagnosis" id="lab-diagnosis" aria-label="AI仕事手放し診断">
       <div class="lab-diagnosis__shell">
         <div class="lab-diagnosis__topline"><span class="lab-diagnosis__brand">LAB.</span><span class="lab-diagnosis__online">YOUR AI PARTNER</span></div>
         <div class="lab-diagnosis__intro" data-ld-intro>
           <div class="lab-diagnosis__heading">
-            <p class="lab-diagnosis__eyebrow">あなたの働き方、今どこ？</p>
-            <h1 class="lab-diagnosis__title" tabindex="-1"><span>NOMAD×AI</span>自走タイプ診断</h1>
-            <p class="lab-diagnosis__sub">今の働き方の現在地と、<br>次に手放せる仕事がわかる。</p>
+            <p class="lab-diagnosis__eyebrow">あなたの仕事、どこまでAIに任せられる？</p>
+            <h1 class="lab-diagnosis__title" tabindex="-1"><span>NOMAD×AI</span>AI仕事手放し診断</h1>
+            <p class="lab-diagnosis__sub">AIに任せられる仕事と、<br>次に手放せる仕事がわかる。</p>
           </div>
           <div class="lab-diagnosis__visual">
             <span class="lab-diagnosis__hello">一緒に、見つけよう。</span>
             <div class="mascot-frame mascot-frame--hero"><img class="diagnosis-mascot" src="assets/mascot.png" width="1080" height="1920" alt="白とシアンの、親しみやすいLAB.のAIパートナー"></div>
             <span class="lab-diagnosis__orbit-label">A LITTLE STEP, MORE FREEDOM.</span>
           </div>
-          <div class="lab-diagnosis__details"><p>7つの質問に答えるだけで、<br>あなたの仕事がどこまで<br class="mobile-break">“自走”しているかを診断します。</p><ul class="lab-diagnosis__features"><li>5段階で現在地がわかる</li><li>次の一歩が見つかる</li></ul></div>
+          <div class="lab-diagnosis__details"><p>7つの質問に答えるだけで、<br>今の働き方と、AIに任せる<br class="mobile-break">次の一歩を診断します。</p><ul class="lab-diagnosis__features"><li>5段階で現在地がわかる</li><li>次の一歩が見つかる</li></ul></div>
           <div class="lab-diagnosis__start"><button class="lab-diagnosis__button" type="button" data-ld-start disabled>診断をはじめる</button><p class="lab-diagnosis__privacy"><span>全7問</span><span>メールアドレス・個人情報の入力なし</span></p><noscript><p>診断を利用するには、JavaScriptを有効にしてください。</p></noscript></div>
           <div class="lab-diagnosis__footer">DISCOVER YOUR NEXT STEP</div>
         </div>
@@ -50,7 +50,7 @@
           </div>
         </div>
         <div class="lab-diagnosis__result" data-ld-result hidden>
-          <p class="lab-diagnosis__eyebrow lab-diagnosis__english">DIAGNOSIS RESULT</p><p class="lab-diagnosis__result-lead">あなたの働き方の現在地がわかりました。</p>
+          <p class="lab-diagnosis__eyebrow lab-diagnosis__english">DIAGNOSIS RESULT</p><p class="lab-diagnosis__result-lead">あなたの仕事を手放すヒントが見つかりました。</p>
           <div class="lab-diagnosis__result-visual">
             <div class="mascot-frame"><img class="diagnosis-mascot" src="assets/mascot.png" alt="あなたの結果を伝えるAIパートナー" width="1080" height="1920"></div>
             <span class="lab-diagnosis__level">LEVEL <span data-ld-level></span> <small>/ 5</small></span>
@@ -65,9 +65,8 @@
         </div>
       </div>
       <section class="lab-diagnosis__event" id="lab-next-step" aria-labelledby="ld-event-title" hidden>
-        <!-- Display course artwork without the outdated date in the supplied image. -->
-        <div class="event-banner-frame event-banner-frame--course"><img class="event-banner" src="assets/ai-work-basic-announcement.png" width="1080" height="1350" alt="AI WORK BASIC講座。事業主・フリーランス向け、AI初心者歓迎、参加無料。文章・デザイン・SNS。仕事ですぐに使えるAIの基本から。"></div>
-        <div><p class="lab-diagnosis__event-label">NEXT STEP</p><h3 id="ld-event-title" tabindex="-1"><span>次の一歩を一緒に。</span></h3><p>診断で見えたあなたの現在地から、<br>次に何を手放し、何を伸ばしていくのか。<br>講座のご案内では、そのヒントを具体的にお届けします。</p>
+        <button type="button" class="event-banner-frame event-banner-frame--diagnosis" data-ld-banner-retry aria-label="AI仕事手放し診断をもう一度はじめる"><img class="event-banner" src="assets/ai-work-release-banner.png" width="1254" height="1254" alt="あなたの仕事、どこまでAIに任せられる？ AI仕事手放し診断。全7問、個人情報の入力なし。診断をはじめる。"></button>
+        <div><p class="lab-diagnosis__event-label">NEXT STEP</p><h3 id="ld-event-title" tabindex="-1"><span>見つけた仕事を、<br>AIに任せる一歩へ。</span></h3><p>結果に出た仕事をひとつ選び、まずは下書きや整理からAIに任せてみましょう。<br>具体的な使い方を知りたい方は、講座のご案内へ。<br>画像のボタンから、もう一度診断することもできます。</p>
         <!-- Course information page. -->
         <a class="lab-diagnosis__button" href="https://diamond0307-ctrl.github.io/AI_creator/" target="_blank" rel="noopener">講座のご案内を見る</a><p class="lab-diagnosis__note">講座の詳細ページが開きます。</p></div>
       </section>

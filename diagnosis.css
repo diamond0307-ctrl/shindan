@@ -170,3 +170,9 @@ h1,h3{font-weight:800;text-shadow:0 2px 9px #7defff16}
 /* Hide the outdated date at y < 470px without changing the original artwork. */
 .event-banner-frame--course{position:relative;aspect-ratio:1080 / 620;background:#fff}
 .event-banner-frame--course .event-banner{position:absolute;top:-75.806452%;left:0;width:100%;height:auto;max-width:none}
+
+/* Keep the supplied square artwork complete and its start button actionable. */
+.event-banner-frame--diagnosis{display:block;width:100%;padding:0;aspect-ratio:1;cursor:pointer;color:inherit;font:inherit}
+.event-banner-frame--diagnosis .event-banner{display:block;width:100%;height:auto;object-fit:contain}
+.event-banner-frame--diagnosis:focus-visible{outline:3px solid #7defff;outline-offset:6px}
+@media(max-width:600px){.lab-diagnosis__title{font-size:clamp(25px,6.8vw,35px)}}
